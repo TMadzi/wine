@@ -15,15 +15,15 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item to="/login">Login</b-nav-item>
-            <b-nav-item to="/about">About</b-nav-item>
-            <b-nav-item to="/contact">Contact</b-nav-item>
+            <b-nav-item to="/">About</b-nav-item>
+            <b-nav-item to="/">Contact</b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown text="Register" right>
-              <b-dropdown-item to="/register-entrepreneur">Entrprenuer</b-dropdown-item>
-              <b-dropdown-item to="/register-funder">Funder</b-dropdown-item>
+              <b-dropdown-item to="/">Entrprenuer</b-dropdown-item>
+              <b-dropdown-item to="/">Funder</b-dropdown-item>
             </b-nav-item-dropdown>
 
             <b-nav-item to="/login">Sign In</b-nav-item>
