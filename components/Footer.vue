@@ -2,7 +2,7 @@
   <footer>
     <div class="social">
       <p class="our-social">Connect</p>
-      <b-link class="social-link">FB</b-link>
+      <b-link class="social-link"><i class="fas abacus"></i></b-link>
       <b-link class="social-link">INSTA</b-link>
       <b-link class="social-link">TWITTER</b-link>
     </div>

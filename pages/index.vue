@@ -38,17 +38,17 @@
         <b-col cols='12' md='4' class="centered">
           <b-img class="how-image" src="../assets/images/1.png"></b-img>
           <h3 class="how-step-heading">Take Our Quiz</h3>
-          <p>Take our quiz and get your unique wine profile</p>
+          <p class="work-para">Take our quiz and get your unique wine profile</p>
         </b-col>
         <b-col cols='12' md='4' class="centered">
           <b-img class="how-image" src="../assets/images/2.png"></b-img>
           <h3 class="how-step-heading">View Matches</h3>
-          <p>Take our quiz and get your unique wine profile</p>
+          <p class="work-para">Based on the results of your quiz, see the wines that we best think will suit your pallette.</p>
         </b-col>
         <b-col cols='12' md='4' class="centered">
           <b-img class="how-image" src="../assets/images/3.png"></b-img>
           <h3 class="how-step-heading">Enjoy</h3>
-          <p>Take our quiz and get your unique wine profile</p>
+          <p class="work-para">Sit back, relax and enjoy your wines in whatever way you prefer</p>
         </b-col>
       </b-row>
       <p class="centered start-btn">
@@ -63,9 +63,25 @@
     <div>
       <b-row no-gutters>
         <b-col cols="12" md="6">
-          <b-img src="../assets/images/wine2.jpg" class="top-image" alt="Fluid image"></b-img>
+          <b-img src="../assets/images/wine6.jpg" class="top-image" alt="Fluid image"></b-img>
         </b-col>
         <b-col cols="12" md="6">
+        <div class="how-it-works">
+          <h2 class="curated-heading">
+            Exclusive Wine Tastings &amp; Events
+          </h2>
+          <p class="cellar-text">
+            We offer exclusive wine tasting events for you to enjoy some of our premium wines and network with
+            other wine aficionados. Learn tasting techniques and other skills from our resident sommelier!
+          </p>
+          <p class="centered start-btn">
+          <b-link class="start-button">Learn More</b-link>
+          </p>
+        </div>
+        </b-col>
+      </b-row>
+      <b-row no-gutters>
+        <b-col cols="12" md="6" order="2" order-md="1">
         <div class="how-it-works">
           <h2 class="curated-heading">
             Specially Curated For Your Pleasure
@@ -79,6 +95,9 @@
           <b-link class="start-button">I'm Ready</b-link>
           </p>
         </div>
+        </b-col>
+        <b-col cols="12" order="1" order-md="2" md="6">
+          <b-img src="../assets/images/wine2.jpg" class="top-image" alt="Fluid image"></b-img>
         </b-col>
       </b-row>
   </div>
@@ -97,12 +116,12 @@ export default {}
 }
 .main-heading{
   color: #0f4e63;
-  font-size: 2.15rem;
-  width:40%;
-  margin: 0 auto;
+  font-size: 3.5rem;
+  width: 61%;
+  margin: 0 auto 28px auto;
   text-transform: capitalize;
   font-weight: 700;
-  line-height: 2.8rem;
+  line-height: 3.5rem;
   text-align: center;
 }
 .centered{
@@ -126,12 +145,14 @@ export default {}
   line-height: .9;
   text-transform: uppercase;
   border: 1px solid rgb(126, 5, 116);
+  transition: all 600ms ease;
 }
 .start-button:hover{
   color: rgb(126, 5, 116);
   background: white;
   padding: 10px 30px;
   text-decoration: none;
+  transition: all 600ms ease;
 }
 .top-image{
   width: 100%;
@@ -145,6 +166,10 @@ export default {}
   font-weight: 700;
   line-height: 2.8rem;
   text-align: center;
+}
+.work-para{
+  margin: 0 auto;
+  width: 70%;
 }
 .how-image{
   width:40%;

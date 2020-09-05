@@ -5,15 +5,13 @@
         <b-navbar-brand href="#">Oh So Cellar</b-navbar-brand>
 
         <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
-            <b-nav-item to="/login">Login</b-nav-item>
-            <b-nav-item to="/">About</b-nav-item>
-            <b-nav-item to="/">Contact</b-nav-item>
-          </b-navbar-nav>
           <!-- Right aligned nav items -->
-          <b-navbar-nav>
-            <b-nav-item to="/register">Register</b-nav-item>
-            <b-nav-item to="/login">Sign In</b-nav-item>
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item to="/login" class="main-nav">Home</b-nav-item>
+            <b-nav-item to="/" class="main-nav">About Us</b-nav-item>
+            <b-nav-item to="/" class="main-nav">Contact Us</b-nav-item>
+            <b-nav-item to="/register" class="reg-lg">Register</b-nav-item>
+            <b-nav-item to="/login" class="sign-lg">Sign In</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
         <div class="mobile-sidebar-nav">
@@ -51,11 +49,34 @@ export default {
 <style>
 .navi{
   border-bottom: 1px solid rgb(243, 229, 229);
-  padding-bottom:10px;
+  padding:10px 0;
+}
+.navbar{
+  padding: 0.5rem 1rem;
+}
+.main-nav{
+  margin-right: 20px;
+  font-size: 18px;
+  transition: all 600ms ease;
+  color: rgb(126, 5, 116);
+}
+.main-nav .nav-link{
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 600ms ease;
+  color: rgba(126, 5, 116, 0.712) !important;
+}
+.main-nav:hover .nav-link{
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 600ms ease;
+  color: rgba(126, 5, 116) !important;
 }
 .sidebar-toggle{
   border-color: white;
-  background-color: white;;
+  background-color: white;
 }
 .sidebar-btn-cont{
   text-align: center;
@@ -80,6 +101,25 @@ export default {
   color: white;
   transition: all 600ms ease;
 }
+.reg-lg{
+  background-color: rgb(126, 5, 116);
+  transition: all 600ms ease;
+  margin-right:10px;
+  padding: 0 20px;
+  border: 1px solid rgb(126, 5, 116);
+}
+
+.reg-lg:hover{
+  background-color: white;
+  transition: all 600ms ease;
+}
+
+.reg-lg .nav-link{
+  color:white !important;
+}
+.reg-lg:hover .nav-link{
+  color:rgb(126, 5, 116) !important;
+}
 .sign{
   background-color: white;
   color: rgb(126, 5, 116);
@@ -92,6 +132,23 @@ export default {
   text-decoration: none;
   color: rgb(126, 5, 116);
   transition: all 600ms ease;
+}
+.sign-lg{
+  background-color: white;
+  transition: all 600ms ease;
+  padding: 0 20px;
+  margin-left:10px;
+  border: 1px solid rgb(126, 5, 116);
+}
+.sign-lg:hover{
+  background-color: rgb(126, 5, 116);
+  transition: all 600ms ease;
+}
+.sign-lg .nav-link{
+  color:rgb(126, 5, 116) !important;
+}
+.sign-lg:hover .nav-link{
+  color:white !important;
 }
 .b-sidebar-body{
   padding: 20px 30px;
@@ -151,6 +208,9 @@ color: rgb(126, 5, 116);
 @media only screen and (min-width: 992px) {
   .mobile-sidebar-nav{
     display: none;
+  }
+  .navbar{
+    padding: 0.5rem 10rem;
   }
 }
 
