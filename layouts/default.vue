@@ -10,14 +10,9 @@
             <b-nav-item to="/">About</b-nav-item>
             <b-nav-item to="/">Contact</b-nav-item>
           </b-navbar-nav>
-
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <b-nav-item-dropdown text="Register" right>
-              <b-dropdown-item to="/">Entrprenuer</b-dropdown-item>
-              <b-dropdown-item to="/">Funder</b-dropdown-item>
-            </b-nav-item-dropdown>
-
+          <b-navbar-nav>
+            <b-nav-item to="/register">Register</b-nav-item>
             <b-nav-item to="/login">Sign In</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
@@ -29,14 +24,14 @@
             <span></span>
           </span>
       </b-button>
-      <b-sidebar id="sidebar-1" title="Sidebar" right backdrop shadow>
-        <div class="px-3 py-2">
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-          </p>
-          <b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
+      <b-sidebar id="sidebar-1" class="menu-sidebar"  right backdrop shadow>
+        <div class="sidebar-btn-cont">
+          <b-link to="/register" class="siderbar-btn reg">Register</b-link>
+          <b-link to="/login" class="siderbar-btn sign">Sign In</b-link>
         </div>
+        <b-link to="/" class="sidebar-menu-item">Home</b-link>
+        <b-link to="/about" class="sidebar-menu-item">About Us</b-link>
+        <b-link to="/contact" class="sidebar-menu-item">Contact Us</b-link>
       </b-sidebar>
     </div>
       </b-navbar>
@@ -61,6 +56,55 @@ export default {
 .sidebar-toggle{
   border-color: white;
   background-color: white;;
+}
+.sidebar-btn-cont{
+  text-align: center;
+  margin: 0 auto 40px auto;
+}
+.siderbar-btn {
+  border: 1px solid rgb(126, 5, 116);
+  padding: 5px 20px;
+  color: rgb(126, 5, 116);
+  text-transform: uppercase;
+}
+.reg{
+  color: white;
+  background-color: rgb(126, 5, 116);
+  transition: all 600ms ease;
+  margin-right:10px;
+}
+.reg:hover{
+  font-size:18px;
+  padding: 3.5px 15px;
+  text-decoration: none;
+  color: white;
+  transition: all 600ms ease;
+}
+.sign{
+  background-color: white;
+  color: rgb(126, 5, 116);
+  transition: all 600ms ease;
+  margin-left:10px;
+}
+.sign:hover{
+  font-size:18px;
+  padding: 3.5px 15px;
+  text-decoration: none;
+  color: rgb(126, 5, 116);
+  transition: all 600ms ease;
+}
+.b-sidebar-body{
+  padding: 20px 30px;
+}
+.sidebar-menu-item{
+  display:block;
+  font-size:24px;
+  padding:10px;
+  color:rgb(77, 77, 77);
+}
+.sidebar-menu-item:hover{
+text-decoration: none;
+color: rgb(126, 5, 116);
 }
 .sidebar-toggle:hover{
   border-color: rgb(126, 5, 116);

@@ -34,7 +34,7 @@
       <h2 class="how-heading">
         How we work
       </h2>
-      <b-row>
+      <b-row no-gutters>
         <b-col cols='12' md='4' class="centered">
           <b-img class="how-image" src="../assets/images/1.png"></b-img>
           <h3 class="how-step-heading">Take Our Quiz</h3>
@@ -56,12 +56,12 @@
       </p>
     </div>
     <div class="cta">
-      <b-row>
+      <b-row no-gutters>
         <b-col class="cta-col"></b-col>
       </b-row>
     </div>
     <div>
-      <b-row>
+      <b-row no-gutters>
         <b-col cols="12" md="6">
           <b-img src="../assets/images/wine2.jpg" class="top-image" alt="Fluid image"></b-img>
         </b-col>
@@ -128,7 +128,7 @@ export default {}
   border: 1px solid rgb(126, 5, 116);
 }
 .start-button:hover{
-  color: rgb(126, 5, 116);;
+  color: rgb(126, 5, 116);
   background: white;
   padding: 10px 30px;
   text-decoration: none;
@@ -156,7 +156,7 @@ export default {}
   font-size: 1.5rem;
 }
 .header-background{
-  background: url('../assets/images/wine1.jpg') center center / cover no-repeat fixed;
+  background: url('../assets/images/wine1.jpg') center center / cover no-repeat;
   height: 400px;
 }
 .curated-heading{
@@ -177,7 +177,8 @@ export default {}
 }
 .cta{
   height: 300px;
-  background: #0f4e63;
+  background: rgb(126, 5, 116);
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -229,7 +230,7 @@ export default {}
     width: 90%;
   }
   .header-background{
-    background: url('../assets/images/wine1.jpg') center center / cover no-repeat fixed;
+    background: url('../assets/images/wine1.jpg') center center / cover no-repeat;
     height: 75vh;
   }
 
