@@ -57,7 +57,9 @@
     </div>
     <div class="cta">
       <b-row no-gutters>
-        <b-col class="cta-col"></b-col>
+        <b-col class="cta-col"><h2>Point1</h2></b-col>
+        <b-col class="cta-col"><h2>Point1</h2></b-col>
+        <b-col class="cta-col"><h2>Point1</h2></b-col>
       </b-row>
     </div>
     <div>
@@ -201,16 +203,33 @@ export default {}
   margin: 10px auto 10px auto;
 }
 .cta{
-  height: 300px;
+  height: 100%;
   background: rgb(126, 5, 116);
-
+  transform: translate(0, 0);
+}
+.cta-col{
+  text-align: center;
+  color: rgba(255, 255, 255, 0.808);
+  padding:40px;
+}
+.cta-col h2{
+  font-size: 7rem;
+  transform: translate(0, 0);
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+  .cta{
+  height: 300px;
+}
+.cta-col h2{
+  font-size: 7rem;
+  transform: translate(0, 50%);
+}
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
