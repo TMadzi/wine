@@ -10,8 +10,9 @@
           description="We'll never share your email with anyone else."
       >
           <b-form-input
-          id="input-1"
+          id="email-inout"
           type="email"
+          v-model="form.email"
           required
           placeholder="Enter email"
           ></b-form-input>
@@ -19,23 +20,65 @@
 
       <b-form-group id="input-group-2" label-for="input-2">
           <b-form-input
-          id="input-2"
+          id="password-input"
           type="password"
+          v-model="form.password"
           required
           placeholder="Enter name"
           ></b-form-input>
       </b-form-group>
       <b-form-checkbox value="that">Keep me signed in</b-form-checkbox>
-      <b-button type="submit" class="sign-in" >Login</b-button>
+      <b-button type="submit" class="sign-in" >Register</b-button>
       <br>
-      <b-link to="/register-funder">Register now</b-link>
+      <b-link to="/register-funder">Already registered? Log In</b-link>
       </b-form>
     </div>
   </div>
 </template>
 <script>
+import GoTrue from 'gotrue-js'
+const auth = new GoTrue({
+  APIUrl: 'https://wineapp.netlify.app/.netlify/identity',
+  audience: '',
+  setCookie: false
+})
 export default {
-  layout: 'null'
+  data () {
+    return {
+      form: {
+        email: '',
+        password: ' '
+      }
+    }
+  },
+  layout: 'null',
+  methods: {
+    onSubmit (evt) {
+      evt.preventDefault()
+      const email = this.form.email
+      const password = JSON.stringify(this.form.password)
+
+      console.log(this.form.passsword)
+      console.log(this.form.email)
+      // registers the new user with a username and password
+      auth
+        .signup(email, password)
+        .then(response => console.log('Confirmation email sent', response))
+        .catch(error => console.log("It's an error", error))
+    // Instantiate the GoTrue auth client with an optional configuration
+    },
+    onReset (evt) {
+      evt.preventDefault()
+      // Reset our form values
+      this.form.email = ''
+      this.form.password = ''
+      // Trick to reset/clear native browser form validation state
+      this.show = false
+      this.$nextTick(() => {
+        this.show = true
+      })
+    }
+  }
 }
 </script>
 <style>

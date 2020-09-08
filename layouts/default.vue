@@ -2,14 +2,14 @@
   <div>
     <div class="navi">
       <b-navbar toggleable="lg">
-        <b-navbar-brand href="#">Oh So Cellar</b-navbar-brand>
+        <b-navbar-brand href="#">Uncorked</b-navbar-brand>
 
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-            <b-nav-item to="/login" class="main-nav">Home</b-nav-item>
-            <b-nav-item to="/" class="main-nav">About Us</b-nav-item>
-            <b-nav-item to="/" class="main-nav">Contact Us</b-nav-item>
+            <b-nav-item to="/" class="main-nav">Home</b-nav-item>
+            <b-nav-item to="/about" class="main-nav">About Us</b-nav-item>
+            <b-nav-item to="/contact" class="main-nav">Contact Us</b-nav-item>
             <b-nav-item to="/register" class="reg-lg">Register</b-nav-item>
             <b-nav-item to="/login" class="sign-lg">Sign In</b-nav-item>
           </b-navbar-nav>
@@ -43,6 +43,10 @@ import Footer from '~/components/Footer.vue'
 export default {
   components: {
     Footer
+  },
+  transition: {
+    name: 'test',
+    mode: 'out-in'
   }
 }
 </script>

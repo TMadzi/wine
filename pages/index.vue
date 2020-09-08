@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="top-section container">
+    <div data-aos="zoom-in-up" data-aos-anchor-placement="top-center" data-aos-offset="-700" class="top-section container">
       <h2 class="main-heading">
         Discover your wine experience
       </h2>
@@ -31,27 +31,47 @@
       </div>
     </div>
     <div class="how-it-works">
-      <h2 class="how-heading">
+      <h2 data-aos="slide-up" data-aos-duration="1000" class="how-heading">
         How we work
       </h2>
       <b-row no-gutters>
-        <b-col cols='12' md='4' class="centered">
+        <b-col
+          data-aos="slide-up"
+          data-aos-duration="1000"
+          cols='12'
+          md='4'
+          class="centered"
+        >
           <b-img class="how-image" src="../assets/images/1.png"></b-img>
           <h3 class="how-step-heading">Take Our Quiz</h3>
           <p class="work-para">Take our quiz and get your unique wine profile</p>
         </b-col>
-        <b-col cols='12' md='4' class="centered">
+        <b-col
+          data-aos="slide-up"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+          cols='12'
+          md='4'
+          class="centered"
+        >
           <b-img class="how-image" src="../assets/images/2.png"></b-img>
           <h3 class="how-step-heading">View Matches</h3>
           <p class="work-para">Based on the results of your quiz, see the wines that we best think will suit your pallette.</p>
         </b-col>
-        <b-col cols='12' md='4' class="centered">
+        <b-col
+          data-aos="slide-up"
+          data-aos-duration="1000"
+          data-aos-delay="150"
+          cols='12'
+          md='4'
+          class="centered"
+        >
           <b-img class="how-image" src="../assets/images/3.png"></b-img>
           <h3 class="how-step-heading">Enjoy</h3>
           <p class="work-para">Sit back, relax and enjoy your wines in whatever way you prefer</p>
         </b-col>
       </b-row>
-      <p class="centered start-btn">
+      <p data-aos="slide-up" data-aos-delay="100" data-aos-duration="1000" class="centered start-btn">
         <b-link class="start-button">Sign Me Up</b-link>
       </p>
     </div>
@@ -68,7 +88,7 @@
           <b-img src="../assets/images/wine6.jpg" class="top-image" alt="Fluid image"></b-img>
         </b-col>
         <b-col cols="12" md="6">
-        <div class="how-it-works">
+        <div data-aos="slide-up" data-aos-duration="1000"  class="how-it-works">
           <h2 class="curated-heading">
             Exclusive Wine Tastings &amp; Events
           </h2>
@@ -84,7 +104,7 @@
       </b-row>
       <b-row no-gutters>
         <b-col cols="12" md="6" order="2" order-md="1">
-        <div class="how-it-works">
+        <div data-aos="slide-up" data-aos-duration="1000" class="how-it-works">
           <h2 class="curated-heading">
             Specially Curated For Your Pleasure
           </h2>
@@ -106,9 +126,13 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+  transition: {
+    name: 'test',
+    mode: ''
+  }
+}
 </script>
-
 <style>
 .top-section{
   padding: 20px 0 10px 0;
@@ -210,7 +234,6 @@ export default {}
 .cta-col{
   text-align: center;
   color: rgba(255, 255, 255, 0.808);
-  padding:40px;
 }
 .cta-col h2{
   font-size: 7rem;

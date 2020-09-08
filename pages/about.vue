@@ -16,3 +16,11 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  transition: {
+    name: 'test',
+    mode: ''
+  }
+}
+</script>

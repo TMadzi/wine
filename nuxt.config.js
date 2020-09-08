@@ -29,12 +29,14 @@ export default {
   ** Global CSS
   */
   css: [
+    'assets/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '@/plugins/aos', ssr: false }
   ],
   /*
   ** Auto import components

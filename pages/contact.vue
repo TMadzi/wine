@@ -65,6 +65,14 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  transition: {
+    name: 'test',
+    mode: 'out-in'
+  }
+}
+</script>
 <style>
 .form{
   padding: 50px;
