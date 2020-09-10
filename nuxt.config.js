@@ -29,8 +29,12 @@ export default {
   ** Global CSS
   */
   css: [
-    'assets/main.css'
+    '~/assets/main.css'
   ],
+  loading: {
+    color: 'blue',
+    height: '5px'
+  },
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins

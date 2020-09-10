@@ -2,7 +2,9 @@
   <div>
     <div class="navi">
       <b-navbar toggleable="lg">
-        <b-navbar-brand href="#">Uncorked</b-navbar-brand>
+        <b-navbar-brand href="#">
+          <b-img src="../assets/images/logo/logo.png" class="logo"></b-img>
+        </b-navbar-brand>
 
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
@@ -43,20 +45,18 @@ import Footer from '~/components/Footer.vue'
 export default {
   components: {
     Footer
-  },
-  transition: {
-    name: 'test',
-    mode: 'out-in'
   }
 }
 </script>
 <style>
+.logo{
+  height:75px;
+}
 .navi{
   border-bottom: 1px solid rgb(243, 229, 229);
-  padding:10px 0;
 }
 .navbar{
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
 }
 .main-nav{
   margin-right: 20px;

@@ -1,9 +1,21 @@
 <template>
   <div class='main'>
     <div class='form-container'>
-      <h2>Oh So Cellar</h2>
-      <h3 class="login-header">Log In</h3>
+      <h2>Uncorked</h2>
+      <h3 class="login-header">Register</h3>
       <b-form class="form" @submit="onSubmit" @reset="onReset">
+      <b-form-group
+          id="input-group-1"
+          label-for="fullname"
+      >
+          <b-form-input
+          id="name-input"
+          type="text"
+          v-model="form.fullname"
+          required
+          placeholder="Your Name"
+          ></b-form-input>
+      </b-form-group>
       <b-form-group
           id="input-group-1"
           label-for="input-1"
@@ -17,7 +29,6 @@
           placeholder="Enter email"
           ></b-form-input>
       </b-form-group>
-
       <b-form-group id="input-group-2" label-for="input-2">
           <b-form-input
           id="password-input"
@@ -27,10 +38,10 @@
           placeholder="Enter name"
           ></b-form-input>
       </b-form-group>
-      <b-form-checkbox value="that">Keep me signed in</b-form-checkbox>
       <b-button type="submit" class="sign-in" >Register</b-button>
       <br>
-      <b-link to="/register-funder">Already registered? Log In</b-link>
+      <b-alert variant="success" v-show="showAlert">Thank you for registering. Please check your email to confirm your account.</b-alert>
+      <b-link to="/login">Already registered? Log In</b-link>
       </b-form>
     </div>
   </div>
@@ -46,27 +57,15 @@ export default {
   data () {
     return {
       form: {
+        fullname: '',
         email: '',
         password: ' '
       }
     }
   },
+  transitions: 'home',
   layout: 'null',
   methods: {
-    onSubmit (evt) {
-      evt.preventDefault()
-      const email = this.form.email
-      const password = JSON.stringify(this.form.password)
-
-      console.log(this.form.passsword)
-      console.log(this.form.email)
-      // registers the new user with a username and password
-      auth
-        .signup(email, password)
-        .then(response => console.log('Confirmation email sent', response))
-        .catch(error => console.log("It's an error", error))
-    // Instantiate the GoTrue auth client with an optional configuration
-    },
     onReset (evt) {
       evt.preventDefault()
       // Reset our form values
@@ -77,11 +76,31 @@ export default {
       this.$nextTick(() => {
         this.show = true
       })
+    },
+    onSubmit (evt) {
+      evt.preventDefault()
+      const fullname = this.form.fullname
+      const email = this.form.email
+      const password = JSON.stringify(this.form.password)
+      const data = {
+        full_name: fullname
+      }
+      console.log(this.form.passsword)
+      console.log(this.form.email)
+      // registers the new user with a username and password
+      auth
+        .signup(email, password, data)
+        .then(response => console.log('Confirmation email sent', response))
+        .catch(error => console.log("It's an error", error))
+      alert(JSON.stringify(data))
     }
   }
 }
 </script>
 <style>
+.home-enter-active, .home-leave-active { transition: opacity 1s; }
+.home-enter, .home-leave-active { opacity: 0; }
+
 .main{
   background:rgb(240, 240, 245);
   height:100vh;

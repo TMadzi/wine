@@ -67,10 +67,6 @@
 </template>
 <script>
 export default {
-  transition: {
-    name: 'test',
-    mode: 'out-in'
-  }
 }
 </script>
 <style>

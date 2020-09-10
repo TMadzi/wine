@@ -1,7 +1,7 @@
 <template>
   <div class='main'>
     <div class='form-container'>
-      <h2>Oh So Cellar</h2>
+      <h2>Uncorked</h2>
       <h3 class="login-header">Log In</h3>
       <b-form class="form" @submit="onSubmit" @reset="onReset">
       <b-form-group
@@ -28,17 +28,21 @@
       <b-form-checkbox value="that">Keep me signed in</b-form-checkbox>
       <b-button type="submit" class="sign-in" >Login</b-button>
       <br>
-      <b-link to="/register-funder">Register now</b-link>
+      <b-link to="/register">Register now</b-link>
       </b-form>
     </div>
   </div>
 </template>
 <script>
 export default {
-  layout: 'null'
+  layout: 'null',
+  transitions: 'home'
 }
 </script>
 <style>
+.home-enter-active, .home-leave-active { transition: opacity 1s; }
+.home-enter, .home-leave-active { opacity: 0; }
+
 .main{
   background:rgb(240, 240, 245);
   height:100vh;

@@ -127,13 +127,12 @@
 </template>
 <script>
 export default {
-  transition: {
-    name: 'test',
-    mode: ''
-  }
+  transition: 'home'
 }
 </script>
 <style>
+.home-enter-active, .home-leave-active { transition: opacity 1s; }
+.home-enter, .home-leave-active { opacity: 0; }
 .top-section{
   padding: 20px 0 10px 0;
 }
