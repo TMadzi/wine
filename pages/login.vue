@@ -5,7 +5,7 @@
         <b-img src="../assets/images/logo/logo.png" class="logo"></b-img>
       </b-link>
       <h3 class="login-header">Log In</h3>
-      <b-form class="form" @submit="onSubmit" @reset="onReset">
+      <b-form class="form" @submit="onSubmit">
       <b-form-group
           id="input-group-1"
           label-for="input-1"
@@ -15,6 +15,7 @@
           id="input-1"
           type="email"
           required
+          v-model="form.email"
           placeholder="Enter email"
           ></b-form-input>
       </b-form-group>
@@ -23,6 +24,7 @@
           <b-form-input
           id="input-2"
           type="password"
+          v-model="form.password"
           required
           placeholder="Enter name"
           ></b-form-input>
@@ -38,7 +40,7 @@
 <script>
 import GoTrue from 'gotrue-js'
 const auth = new GoTrue({
-  APIUrl: 'https://wineapp.netlify.app/.netlify/identity',
+  APIUrl: 'https://uncorked.netlify.app/.netlify/identity',
   audience: '',
   setCookie: false
 })
@@ -62,9 +64,10 @@ export default {
       console.log(this.form.email)
       // login existing user with a username and password
       auth
-        .login(email.value, password.value, true)
+        .login(email, password, true)
         .then((response) => {
           alert('Success! Response: ' + JSON.stringify({ response }), this.form)
+          console.log(email)
         })
         .catch(error => alert('Failed :( ' + JSON.stringify(error), this.form))
     }

@@ -51,7 +51,7 @@
 <script>
 import GoTrue from 'gotrue-js'
 const auth = new GoTrue({
-  APIUrl: 'https://wineapp.netlify.app/.netlify/identity',
+  APIUrl: 'https://uncorked.netlify.app/.netlify/identity',
   audience: '',
   setCookie: false
 })
