@@ -1,7 +1,9 @@
 <template>
   <div class='main'>
     <div class='form-container'>
-      <h2>Uncorked</h2>
+      <b-link to="/">
+        <b-img src="../assets/images/logo/logo.png" class="logo"></b-img>
+      </b-link>
       <h3 class="login-header">Log In</h3>
       <b-form class="form" @submit="onSubmit" @reset="onReset">
       <b-form-group
@@ -34,9 +36,39 @@
   </div>
 </template>
 <script>
+import GoTrue from 'gotrue-js'
+const auth = new GoTrue({
+  APIUrl: 'https://wineapp.netlify.app/.netlify/identity',
+  audience: '',
+  setCookie: false
+})
 export default {
+  data () {
+    return {
+      form: {
+        email: '',
+        password: ' '
+      }
+    }
+  },
+  transitions: 'home',
   layout: 'null',
-  transitions: 'home'
+  methods: {
+    onSubmit (evt) {
+      evt.preventDefault()
+      const email = this.form.email
+      const password = JSON.stringify(this.form.password)
+      console.log(this.form.passsword)
+      console.log(this.form.email)
+      // login existing user with a username and password
+      auth
+        .login(email.value, password.value, true)
+        .then((response) => {
+          alert('Success! Response: ' + JSON.stringify({ response }), this.form)
+        })
+        .catch(error => alert('Failed :( ' + JSON.stringify(error), this.form))
+    }
+  }
 }
 </script>
 <style>
@@ -58,7 +90,7 @@ export default {
 }
 .sign-in{
   color: white;
-  background: rgb(126, 5, 116);
+  background: rgb(72, 35, 101);
   padding: 10px 30px;
   font-size: 1.3rem;
   margin: 30px 0;
@@ -67,14 +99,43 @@ export default {
   letter-spacing: .2em;
   line-height: .9;
   text-transform: uppercase;
-  border: 1px solid rgb(126, 5, 116);
+  border: 1px solid rgb(72, 35, 101);
 }
 .sign-in:hover{
-  color: rgb(126, 5, 116);;
+  color: rgb(72, 35, 101);;
   background: white;
   padding: 10px 30px;
   text-decoration: none;
 }
+
+.form{
+  padding: 50px;
+}
+.hfrom-input{
+  border-color:transparent;
+  outline: 0;
+  background-color: rgba(241, 241, 241, 0.644);
+  transition: 300ms all ease;
+}
+.hfrom-input:focus{
+  border-color:transparent;
+  outline: 0;
+  background-color: white;
+  box-shadow: 0 0 0 0.2rem rgba(126, 5, 116, 0.25);
+  transition: 300ms all ease;
+}
+  .contact-input::after{
+    content: " ";
+    height: 5px;
+    display: block;
+    width: 0%;
+    background-color: rgb(72, 35, 101);
+    transition: 300ms all ease;
+  }
+    .contact-input:focus-within:after{
+    width: 100%;
+    transition: 300ms all ease;
+  }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {

@@ -1,13 +1,24 @@
 <template>
   <div>
     <b-container class="wine-quiz">
-      <h1 class="quiz-intro">Hi Bro welcome to your wine quiz!</h1>
         <div v-for='question in lquiz.questions' :key='question.questionIndex'>
-          <div v-show='index === question.questionIndex'>
+          <transition
+            name="custom-classes-transition"
+            enter-active-class="animated tada"
+            leave-active-class="animated bounceOutRight"
+          >
+          <div v-show='index === question.questionIndex' key = question.questionIndex>
             <h2 class="question-text">{{ question.questionTitle }}</h2>
             <div v-if='question.questionType === "imageQ" '>
               <b-row>
-                  <b-col v-on:click ="nextQuestion(response.id)" v-for='response in question.responses' :key='response.id' cols="6">
+                  <b-col
+                    class="question-col"
+                    v-on:click ="nextQuestion(response.id)"
+                    v-for='response in question.responses'
+                    :key='response.id'
+                    cols="12"
+                    md="6"
+                  >
                     <b-card
                     :title= response.responseText
                     :img-src= response.imageSrc
@@ -26,9 +37,11 @@
               </b-row>
             </div>
           </div>
+          </transition>
         </div>
       <div class="movement-btns">
-        <b-link v-show="index > 0" v-on:click ="previousQuestion" class="step-btn-p previous-btn">PREVIOUS</b-link>
+        <b-link v-show="index > 0 && index < 11" v-on:click ="previousQuestion" class="step-btn-p previous-btn">PREVIOUS</b-link>
+        <b-link v-if="index == 11" @:click ="sumbitQuestions" class="step-btn-p previous-btn">SUBMIT</b-link>
       </div>
     </b-container>
   </div>
@@ -64,7 +77,10 @@ export default {
     nextQuestion (id) {
       this.userResponses.push(this.lquiz.questions[this.index].responses[id].responseText)
       this.index++
-      alert(JSON.stringify(this.userResponses))
+    },
+    submitQuestions (id) {
+      this.userResponses.push(this.lquiz.questions[this.index].responses[id].responseText)
+      this.index++
     }
   }
 }
@@ -81,6 +97,14 @@ export default {
   }
   .question{
     text-align: center;
+    font-size: 1.8rem;
+    color: #2f2e2e;
+  }
+  .question-div{
+    transition: opacity 300ms ease;
+  }
+  .question-col{
+    padding: 0 25%;
   }
   .question-text{
     text-align: center;
@@ -88,6 +112,10 @@ export default {
   .quiz-col{
     padding:2px;
     margin-bottom: 20px;
+  }
+  .card-title{
+    text-align: center;
+    font-size: 1.2em;
   }
 .text-question{
   margin: 10px auto;
@@ -100,14 +128,13 @@ export default {
     transition: 400ms all ease;
 }
 .image-question .card-img, .card-img-top, .card-img-bottom {
-    width: 46%;
-    padding-top: 30px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
 }
 .quiz-col:hover{
-    -webkit-box-shadow: inset 0 0 0 2px rgb(126, 5, 116), 2px 4px 7px rgba(0,0,0,.15);
-    box-shadow: inset 0 0 0 2px rgb(126, 5, 116), 2px 4px 7px rgba(0,0,0,.15);
+    -webkit-box-shadow: inset 0 0 0 2px rgb(72, 35, 101), 2px 4px 7px rgba(0,0,0,.15);
+    box-shadow: inset 0 0 0 2px rgb(72, 35, 101), 2px 4px 7px rgba(0,0,0,.15);
     cursor: pointer;
     transition: 400ms all ease;
 }
@@ -120,40 +147,43 @@ export default {
 .step-btn-p{
   padding: 15px;
   color: white;
-  background-color: rgb(126, 5, 116);
+  background-color: rgb(72, 35, 101);
   margin-right: 20px;
   width: 100px;
-  border: 1px solid rgb(126, 5, 116);
+  border: 1px solid rgb(72, 35, 101);
   transition: 300ms all ease;
 }
 .step-btn-n{
   padding: 15px 35px;
   color: white;
-  background-color: rgb(126, 5, 116);
+  background-color: rgb(72, 35, 101);
   width: 100px;
-  border: 1px solid rgb(126, 5, 116);
+  border: 1px solid rgb(72, 35, 101);
   transition: 300ms all ease;
 }
 .step-btn-p:hover{
-  color: rgb(126, 5, 116);
+  color: rgb(72, 35, 101);
   background-color: white;
   transition: 300ms all ease;
   text-decoration: none;
 }
 .step-btn-n:hover{
-  color: rgb(126, 5, 116);
+  color: rgb(72, 35, 101);
   background-color: white;
   transition: 300ms all ease;
   text-decoration: none;
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+    .question-col{
+    padding: 2px 12%;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .wine-quiz{
-  padding: 60px 10%;
+  padding: 30px 10%;
 }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */

@@ -9,7 +9,7 @@
       <div class="social">
       <p class="our-social">Contact</p>
       <b-link class="contact-link">+263771417667</b-link>
-      <b-link class="contact-link">sale@ohsocellar.co.zw</b-link>
+      <b-link class="contact-link">sales@uncorked.co.zw</b-link>
     </div>
 
   </footer>
@@ -17,7 +17,7 @@
 <style>
   footer{
     height:30vh;
-    background: #0f4e63;
+    background: #362d70;
     padding: 35px 40px;
   }
   .social{

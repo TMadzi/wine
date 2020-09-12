@@ -1,7 +1,9 @@
 <template>
   <div class='main'>
     <div class='form-container'>
-      <h2>Uncorked</h2>
+      <b-link to="/">
+        <b-img src="../assets/images/logo/logo.png" class="logo"></b-img>
+      </b-link>
       <h3 class="login-header">Register</h3>
       <b-form class="form" @submit="onSubmit" @reset="onReset">
       <b-form-group
@@ -97,7 +99,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .home-enter-active, .home-leave-active { transition: opacity 1s; }
 .home-enter, .home-leave-active { opacity: 0; }
 
@@ -116,7 +118,7 @@ export default {
 }
 .sign-in{
   color: white;
-  background: rgb(126, 5, 116);
+  background: rgb(72, 35, 101);
   padding: 10px 30px;
   font-size: 1.3rem;
   margin: 30px 0;
@@ -125,10 +127,10 @@ export default {
   letter-spacing: .2em;
   line-height: .9;
   text-transform: uppercase;
-  border: 1px solid rgb(126, 5, 116);
+  border: 1px solid rgb(72, 35, 101);
 }
 .sign-in:hover{
-  color: rgb(126, 5, 116);;
+  color: rgb(72, 35, 101);;
   background: white;
   padding: 10px 30px;
   text-decoration: none;

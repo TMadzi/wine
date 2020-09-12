@@ -2,7 +2,7 @@
   <div>
     <div class="navi">
       <b-navbar toggleable="lg">
-        <b-navbar-brand href="#">
+        <b-navbar-brand to="/">
           <b-img src="../assets/images/logo/logo.png" class="logo"></b-img>
         </b-navbar-brand>
 
@@ -62,21 +62,21 @@ export default {
   margin-right: 20px;
   font-size: 18px;
   transition: all 600ms ease;
-  color: rgb(126, 5, 116);
+  color: rgb(72, 35, 101);
 }
 .main-nav .nav-link{
   margin-right: 20px;
   font-size: 18px;
   font-weight: bold;
   transition: all 600ms ease;
-  color: rgba(126, 5, 116, 0.712) !important;
+  color: rgba(72, 35, 101, 0.712) !important;
 }
 .main-nav:hover .nav-link{
   margin-right: 20px;
   font-size: 18px;
   font-weight: bold;
   transition: all 600ms ease;
-  color: rgba(126, 5, 116) !important;
+  color: rgba(72, 35, 101) !important;
 }
 .sidebar-toggle{
   border-color: white;
@@ -87,14 +87,14 @@ export default {
   margin: 0 auto 40px auto;
 }
 .siderbar-btn {
-  border: 1px solid rgb(126, 5, 116);
+  border: 1px solid rgb(72, 35, 101);
   padding: 5px 20px;
-  color: rgb(126, 5, 116);
+  color: rgb(72, 35, 101);
   text-transform: uppercase;
 }
 .reg{
   color: white;
-  background-color: rgb(126, 5, 116);
+  background-color: rgb(72, 35, 101);
   transition: all 600ms ease;
   margin-right:10px;
 }
@@ -106,11 +106,11 @@ export default {
   transition: all 600ms ease;
 }
 .reg-lg{
-  background-color: rgb(126, 5, 116);
+  background-color: rgb(72, 35, 101);
   transition: all 600ms ease;
   margin-right:10px;
   padding: 0 20px;
-  border: 1px solid rgb(126, 5, 116);
+  border: 1px solid rgb(72, 35, 101);
 }
 
 .reg-lg:hover{
@@ -122,11 +122,11 @@ export default {
   color:white !important;
 }
 .reg-lg:hover .nav-link{
-  color:rgb(126, 5, 116) !important;
+  color:rgb(72, 35, 101) !important;
 }
 .sign{
   background-color: white;
-  color: rgb(126, 5, 116);
+  color: rgb(72, 35, 101);
   transition: all 600ms ease;
   margin-left:10px;
 }
@@ -134,7 +134,7 @@ export default {
   font-size:18px;
   padding: 3.5px 15px;
   text-decoration: none;
-  color: rgb(126, 5, 116);
+  color: rgb(72, 35, 101);
   transition: all 600ms ease;
 }
 .sign-lg{
@@ -142,14 +142,14 @@ export default {
   transition: all 600ms ease;
   padding: 0 20px;
   margin-left:10px;
-  border: 1px solid rgb(126, 5, 116);
+  border: 1px solid rgb(72, 35, 101);
 }
 .sign-lg:hover{
-  background-color: rgb(126, 5, 116);
+  background-color: rgb(72, 35, 101);
   transition: all 600ms ease;
 }
 .sign-lg .nav-link{
-  color:rgb(126, 5, 116) !important;
+  color:rgb(72, 35, 101) !important;
 }
 .sign-lg:hover .nav-link{
   color:white !important;
@@ -165,10 +165,10 @@ export default {
 }
 .sidebar-menu-item:hover{
 text-decoration: none;
-color: rgb(126, 5, 116);
+color: rgb(72, 35, 101);
 }
 .sidebar-toggle:hover{
-  border-color: rgb(126, 5, 116);
+  border-color: rgb(72, 35, 101);
   background-color: white;;
 }
 .sidebar-toggle:active{
@@ -190,7 +190,7 @@ color: rgb(126, 5, 116);
   width: 1.1em;
 }
 .header-bars>span{
-  background:rgb(126, 5, 116);
+  background:rgb(72, 35, 101);
   border-radius: .1em;
   display: block;
   -ms-flex-negative: 0;
@@ -214,7 +214,7 @@ color: rgb(126, 5, 116);
     display: none;
   }
   .navbar{
-    padding: 0.5rem 10rem;
+    padding: 0rem 10rem;
   }
 }
 

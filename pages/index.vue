@@ -40,9 +40,9 @@
           data-aos-duration="1000"
           cols='12'
           md='4'
-          class="centered"
+          class="centered steps"
         >
-          <b-img class="how-image" src="../assets/images/1.png"></b-img>
+          <b-img class="how-image" src="../assets/images/steps/takethequiz.jpg"></b-img>
           <h3 class="how-step-heading">Take Our Quiz</h3>
           <p class="work-para">Take our quiz and get your unique wine profile</p>
         </b-col>
@@ -52,10 +52,10 @@
           data-aos-delay="100"
           cols='12'
           md='4'
-          class="centered"
+          class="centered steps"
         >
-          <b-img class="how-image" src="../assets/images/2.png"></b-img>
-          <h3 class="how-step-heading">View Matches</h3>
+          <b-img class="how-image" src="../assets/images/steps/leaveittoourbots.jpg"></b-img>
+          <h3 class="how-step-heading">Leave it to our Bots</h3>
           <p class="work-para">Based on the results of your quiz, see the wines that we best think will suit your pallette.</p>
         </b-col>
         <b-col
@@ -64,10 +64,10 @@
           data-aos-delay="150"
           cols='12'
           md='4'
-          class="centered"
+          class="centered steps"
         >
-          <b-img class="how-image" src="../assets/images/3.png"></b-img>
-          <h3 class="how-step-heading">Enjoy</h3>
+          <b-img class="how-image" src="../assets/images/steps/have-a-drink.jpg"></b-img>
+          <h3 class="how-step-heading">Enjoy your Drink!</h3>
           <p class="work-para">Sit back, relax and enjoy your wines in whatever way you prefer</p>
         </b-col>
       </b-row>
@@ -77,9 +77,9 @@
     </div>
     <div class="cta">
       <b-row no-gutters>
-        <b-col class="cta-col"><h2>Point1</h2></b-col>
-        <b-col class="cta-col"><h2>Point1</h2></b-col>
-        <b-col class="cta-col"><h2>Point1</h2></b-col>
+        <b-col class="cta-col" cols="12" md="4"><h2>Point1</h2></b-col>
+        <b-col class="cta-col" cols="12" md="4"><h2>Point1</h2></b-col>
+        <b-col class="cta-col" cols="12" md="4"><h2>Point1</h2></b-col>
       </b-row>
     </div>
     <div>
@@ -130,7 +130,7 @@ export default {
   transition: 'home'
 }
 </script>
-<style>
+<style scoped>
 .home-enter-active, .home-leave-active { transition: opacity 1s; }
 .home-enter, .home-leave-active { opacity: 0; }
 .top-section{
@@ -140,7 +140,7 @@ export default {
   display:none;
 }
 .main-heading{
-  color: #0f4e63;
+  color: #362d70;
   font-size: 3.5rem;
   width: 61%;
   margin: 0 auto 28px auto;
@@ -152,6 +152,9 @@ export default {
 .centered{
   text-align: center;
 }
+.steps{
+  margin-bottom: 40px;
+}
 .top-text{
   text-align: center;
   width: 80%;
@@ -160,20 +163,21 @@ export default {
 .start-btn{
   margin: 40px  0;
 }
+
 .start-button{
   color: white;
-  background: rgb(126, 5, 116);
+  background: rgb(72, 35, 101);
   padding: 10px 30px;
   font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: .2em;
   line-height: .9;
   text-transform: uppercase;
-  border: 1px solid rgb(126, 5, 116);
+  border: 1px solid rgb(72, 35, 101);
   transition: all 600ms ease;
 }
 .start-button:hover{
-  color: rgb(126, 5, 116);
+  color: rgb(72, 35, 101);
   background: white;
   padding: 10px 30px;
   text-decoration: none;
@@ -183,7 +187,7 @@ export default {
   width: 100%;
 }
 .how-heading{
-  color: #0f4e63;
+  color: #362d70;
   font-size: 1.8rem;
   margin: 0 auto;
   text-transform: capitalize;
@@ -202,7 +206,7 @@ export default {
   text-align: center;
 }
 .how-step-heading{
-  color: #0f4e63;
+  color: #362d70;
   font-size: 1.5rem;
 }
 .header-background{
@@ -210,7 +214,7 @@ export default {
   height: 400px;
 }
 .curated-heading{
-  color: #0f4e63;
+  color: #362d70;
   font-size: 1.8rem;
   margin: 0 auto;
   width:70%;
@@ -227,12 +231,13 @@ export default {
 }
 .cta{
   height: 100%;
-  background: rgb(126, 5, 116);
+  background: rgb(72, 35, 101);
   transform: translate(0, 0);
 }
 .cta-col{
   text-align: center;
   color: rgba(255, 255, 255, 0.808);
+  padding: 10px 5px;
 }
 .cta-col h2{
   font-size: 7rem;

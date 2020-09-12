@@ -32,7 +32,7 @@ export default {
     '~/assets/main.css'
   ],
   loading: {
-    color: 'blue',
+    color: 'rgb(72, 35, 101)',
     height: '5px'
   },
   /*
