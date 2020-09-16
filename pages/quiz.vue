@@ -41,7 +41,7 @@
         </div>
       <div class="movement-btns">
         <b-link v-show="index > 0 && index < 11" v-on:click ="previousQuestion" class="step-btn-p previous-btn">PREVIOUS</b-link>
-        <b-link v-if="index == 11" @:click ="sumbitQuestions" class="step-btn-p previous-btn">SUBMIT</b-link>
+        <b-link v-if="index > 10" @:click ="sumbitQuestions" class="step-btn-p previous-btn">SUBMIT</b-link>
       </div>
     </b-container>
   </div>

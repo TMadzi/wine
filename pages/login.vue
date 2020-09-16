@@ -59,7 +59,7 @@ export default {
     onSubmit (evt) {
       evt.preventDefault()
       const email = this.form.email
-      const password = JSON.stringify(this.form.password)
+      const password = this.form.password
       console.log(this.form.passsword)
       console.log(this.form.email)
       // login existing user with a username and password

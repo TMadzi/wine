@@ -126,8 +126,25 @@
   </div>
 </template>
 <script>
+import GoTrue from 'gotrue-js'
+const auth = new GoTrue({
+  APIUrl: 'https://uncorked.netlify.app/.netlify/identity',
+  audience: '',
+  setCookie: false
+})
 export default {
-  transition: 'home'
+  transition: 'home',
+  mounted () {
+    const token = decodeURIComponent(document.location.hash).split('confirmation_token=')[1]
+    auth
+      .login(token)
+      .then(function (response) {
+        console.log('Account confirmed!Welcome to the party!', JSON.stringify({ response }))
+      })
+      .catch(function (e) {
+        console.log(e)
+      })
+  }
 }
 </script>
 <style scoped>

@@ -91,7 +91,9 @@ export default {
       console.log(this.form.email)
       // registers the new user with a username and password
       auth
-        .signup(email, password, data)
+        .signup(email, password, {
+          full_name: fullname
+        })
         .then(response => console.log('Confirmation email sent', response))
         .catch(error => console.log("It's an error", error))
       alert(JSON.stringify(data))
